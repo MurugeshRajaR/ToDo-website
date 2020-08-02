@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> To Do</title>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src="https://use.fontawesome.com/27cd1b5e2e.js"></script>
+	<script src="https://kit.fontawesome.com/0470c3ab11.js" crossorigin="anonymous"></script>
+	<script type="text/javascript"  src="index.js"></script>
+</head>
+ 
+<body onload="showLeftContents()" onclick="checkIfPopupIsOpen(event)" oncontextmenu="return false;">
+
+	<div class="container" id="body-content">
+		<nav class="navbar">
+			<div class="left-navbar">
+				<a href="#" title="app launcher">
+				<div class="app-launcher navbar-icon">
+					<i class="fa fa-th" aria-hidden="true"></i>
+				</div>
+				</a>
+				<div class="app-title">
+					To Do
+				</div>
+			</div>
+			<div class="middle-navbar">
+					<a href="#" title="search">
+					<input href="#" title="search" class="search-bar-input" placeholder="search"  type="text" />
+					<i class="fa fa-search icon-search"  aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="right-navbar">
+					<a href="#" title="settings">
+					<div class="settings-icon navbar-icon">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+					</div>
+					</a>
+					<a href="#" title="help & feedback">
+					<div class="help-icon navbar-icon">
+						<i class="fa fa-question" aria-hidden="true"></i>
+					</div>
+					</a>
+					<a href="#" title="what's new">
+					<div class="what-new-icon navbar-icon" >
+						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					</div>
+					</a>
+					<a href="#" title="account manager">
+					<div class="account-icon navbar-icon" >
+						<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+					</div>
+					</a>
+			</div>
+		</nav>
+		<main class="content">
+			<div class="left-content">
+				<div class="left-top">
+					<div class="left-top-menu-icon">
+						<div class="menu-icon">
+							<a href="#">
+								<i class="fa fa-bars icon-b"  aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="left-top-icons">
+						<div class="left-items ">
+							<ul id="add-tasks"  onmousedown="checkingRightClick(event)" onclick="changeRight(event);">
+							</ul>
+							
+						</div>
+						<div id="pop-up-for-task">
+							<ul class="pop-list">
+									<li class="duplicate">
+										<i class="fa fa-files-o pop-up-icon" aria-hidden="true"></i>
+										<p class="pop-up-icon-name"> Duplicate List</p>
+									</li>
+									<li class="print">
+										<i class="fa fa-print pop-up-icon" aria-hidden="true"></i>
+										<p class="pop-up-icon-name"> Print List</p>
+									</li
+							</ul>
+						</div>
+						<div id="pop-up" >
+							<div class="top">
+								<ul class="pop-list">
+									<li>
+										<i class="fa fa-user-plus pop-up-icon" aria-hidden="true"></i>
+										<p class="pop-up-icon-name"> Share List </p>
+									</li>
+									<li>
+										<i class="fa fa-files-o pop-up-icon" aria-hidden="true"></i>
+										<p class="pop-up-icon-name"> Duplicate List</p>
+									</li>
+									<li class="print">
+										<i class="fa fa-print pop-up-icon" aria-hidden="true"></i>
+										<p class="pop-up-icon-name"> Print List</p>
+									</li>
+								</ul>
+
+							</div>
+							<div class="break">
+							<hr></hr>
+							</div>
+							<div class="bottom">
+								<ul class="pop-list">
+								<li onclick="deleteTask()" class="delete" >
+									<i class="fa fa-trash-o pop-up-icon" aria-hidden="true"></i>
+									<p class="pop-up-icon-name"> Delete List</p>
+								</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="left-top-newlist">
+						<div class="newlist-section">
+							<div class="newlist" onclick="showfocus()">
+								<a href="#">
+								<div class="plus-icon">
+									<i class="fa fa-plus" aria-hidden="true"></i>
+								</div>
+								</a>
+								<div class="text-newlist">
+									<input  id="add-new-list" type="text" placeholder="New List" onkeydown="addNewTasks(this, event);" >
+								</div>
+							</div>
+							<div class="create" title="create group">
+								<i class="fa fa-floppy-o"  aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="right-content">
+				<div class="lines">
+					<div id="tasks-right-new">
+						<div id="first">
+							<div class="first-left">
+								<div class="task-content" >
+									<input id="edit" type="text" onkeydown="editTaskName(this, event);"/>
+									<p id="task-name" onclick="createEditable(event)" ></p>
+								</div>
+								<div class="dot-icon" id="dot" onclick="showListOptions()">
+									<i class="fa fa-ellipsis-h" id="iconDot" aria-hidden="true" title="List options"></i>
+								</div>
+							</div>
+							<div class="first-right">
+								<ul>
+								<li id="sort-icon" class="sort right-item">
+									<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+									<p> sort </p>
+								</li>
+								<li id="share-icon" class="share-right right-item">
+									<i class="fa fa-user-plus pop-up-icon" id="share-today" aria-hidden="true"></i>
+									<p id="share-today-text"> Share </p>
+								</li>
+								</ul>
+							</div>
+						</div>
+						<div id="displayDate">
+							<p id="dayAndDate"></p>
+						</div>
+						<div id="next" onclick="showBlueLine(event)">
+							<div class="next-plus-icon" id="plus">
+								<i class="fa fa-plus" aria-hidden="true" id="iconPlus"></i>
+							</div>
+							<div class="next-input" id="inputList">
+								<input type="text" id="inputField" placeholder="Add a Task" onclick="showBlueLine(event)" onkeydown="storeExtraTasks(this,event)">
+							</div>
+							<div id="addButton">
+								<button>ADD</button>
+							</div>
+						</div>
+						<div id="blueLine">
+					 	</div>
+						<div id="extra-tasks" >
+					   		<ul id="taskLists" onmousedown="popUpForExtraTasks(event)" onclick="addToCompletedList(event)">
+					    	</ul>
+					    	<div id="CompletedTasksContainer" >
+					    		<div id="CompletedHeader" onclick="showOrHideCompleted()">
+					    			<div class="headerIcon" >
+					    				<i class="fa fa-angle-down" id="icon-angle"></i>
+					    			</div>
+					    			<div class="headerText">
+					    				<p id="text-completed">Completed</p>
+					    			</div>	
+					    		</div>
+					    		<ul id="CompletedTasks" onclick="removeFromCompletedList(event)" onmousedown="popUpForExtraTasks(event)">
+					    			
+					    		</ul>
+					    	</div>
+
+					 	</div>
+					</div>						
+				</div>
+			</div>
+		</main>
+	</div>
+	<div id="confirmDelete">
+		<div class="text-portion">
+			<p id="custom-text"></p>
+			<p>You won't be able to undo this action </p>
+		</div>
+		<div class="confirm-buttons">
+			<button class="delete-list" type="submit" onclick="confirmed();">Delete List</button>
+			<button class="cancel" type="submit" onclick="canceled();">Cancel</button>
+		</div>
+	</div>
+
+	<div id="listOptions">
+		<div class="listHeader">
+			List Options
+		</div>
+	<hr></hr>
+		<div id="options">
+			<ul class="pop-list">
+				<li onclick="createEditable(event)" id="renameList">
+					<i class="far fa-edit pop-up-icon" aria-hidden="true"></i>
+					<p class="pop-up-icon-name"> Rename List </p>
+				</li>
+				<li class="theme-items">
+					<i class='fas fa-palette pop-up-icon'></i>
+					<p class="theme"> Change Theme</p>
+					<i class="fa fa-angle-right"></i>
+					<div class ="theme-options">
+						<div class="divide blue-outline">
+							<div class="circle" id="blue" onclick="changeColor(event)"></div>
+						</div>
+						<div class="divide red-outline">
+							<div class="circle" id="red" onclick="changeColor(event)"></div>
+						</div>
+						<div class="divide purple-outline">
+							<div class="circle" id="purple" onclick="changeColor(event)"></div>
+						</div>
+						<div class="divide green-outline">
+							<div class="circle" id="green" onclick="changeColor(event)"></div>
+						</div>
+						<div class="divide skyblue-outline">
+							<div class="circle" id="skyblue" onclick="changeColor(event)"></div>
+						</div>
+					</div>
+				</li>
+				<li class="print">
+					<i class="fa fa-print pop-up-icon" aria-hidden="true"></i>
+					<p class="pop-up-icon-name"> Print List</p>
+				</li>
+			</ul>
+		</div>
+		<div class="deleteOption">
+			<ul class="pop-list" id="deleteList">
+				<li onclick="deleteTask()" class="delete" >
+					<i class="far fa-trash-alt pop-up-icon" aria-hidden="true"></i>
+					<p class="pop-up-icon-name"> Delete List</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="extraTasksPopUp">
+		<ul class="extraPop" >
+			<li>
+				<i class="fa fa-sun-o pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Add to My Day </p>
+			</li>
+			<li id="mark-important">
+				<i class="fa fa-star-o pop-up-icon" id="important-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name" id="important-text"> Mark as Important</p>
+			</li>
+			<li class="print" id="mark" >
+				<i class="fa fa-check-circle-o pop-up-icon" id="markOption" aria-hidden="true"></i>
+				<p class="pop-up-icon-name" id="mark-text"> Mark as Completed</p>
+			</li>
+			<hr>
+			<li class="print">
+				<i class="fa fa-calendar-check-o pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Due today</p>
+			</li>
+			<li class="print" >
+				<i class="fa fa-calendar-plus-o pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Due tomorrow</p>
+			</li>
+			<hr>
+			<li class="print">
+				<i class="fa fa-plus pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Create new list from this task</p>
+			</li>
+			<li class="print">
+				<i class="fa fa-print pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Move task to...</p>
+			</li>
+			<li class="print">
+				<i class="fa fa-files-o pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name"> Copy task to...</p>
+			</li>
+			<hr>
+			<li class="delete" onclick="deleteExtraTask()">
+				<i class="far fa-trash-alt pop-up-icon" aria-hidden="true"></i>
+				<p class="pop-up-icon-name">Delete Task</p>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>

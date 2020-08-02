@@ -1,0 +1,1003 @@
+:root {
+	--navbar-color: #0066ff;
+	--left-content: #f5f5f0;
+	--right-content: white;
+	--navbar-icon-hover: #0047b3;
+	--left-content-hover: white;
+}
+
+* {
+	font-family: Segoe UI;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+nav {
+	height: 7%;
+	width: 100%;
+	color: white;
+	background-color: var(--navbar-color);
+}
+
+main {
+	height: 93%;
+	width: 100%;
+	
+}
+
+.left-content {
+	height: 100%;
+	width: 21%;
+	background-color: var(--left-content);
+	float: left;
+}
+
+.right-content {
+	height: 100%;
+	width: 79%;
+	background-color: var(--right-content);
+	float: left;
+	display: flex;
+}
+
+.left-navbar {
+	width: 10%;
+	height: 100%;
+	float: left;
+}
+
+.middle-navbar {
+	width: 75%;
+	height: 100%;
+	float: left;
+}
+
+.right-navbar {
+	width: 15%;
+	height: 100%;
+	float: right;
+}
+
+.app-launcher {
+	height: 100%;
+	width: 35%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app-title {
+	height: 100%;
+	width: 65%;
+	float: right;
+	display: flex;
+	font-weight: bold;
+	align-items: center;
+}
+
+.navbar-icon {
+	color: white;
+}
+
+.navbar-icon:hover {
+	background-color: var(--navbar-icon-hover);
+}
+
+.settings-icon, .help-icon, .what-new-icon, .account-icon {
+	width: 25%;
+	float: left;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.left-top {
+	height: 100%;
+	width: 100%;
+}
+
+
+.left-top-menu-icon {
+	height: 60px;
+	width: 100%;
+	float: left;
+}
+
+.left-top-icons {
+	max-height: 508px;
+	float: left;
+	width: 100%;
+	display: block;
+}
+
+.left-top-newlist {
+	height: 40px;
+	width: 100%;
+	float: left;
+}
+
+.menu-icon {
+	height: 25px;
+	width: 25px;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-icon:hover {
+	background-color: white;
+}
+
+.icon-blue {
+	color: blue;
+}
+
+
+*:focus {
+	outline: none;
+}
+
+ul li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.left-items {
+	max-height: 508px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	float: left;
+	color: #4d4d4d;
+	background-color: var(--left-content);
+}
+
+#add-tasks {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	float: left;
+	background-color: var(--left-content);
+
+}
+
+
+#add-tasks li{
+	float: left;
+	left: 0;
+	height: 38px;
+	width: 100%;
+	cursor: pointer;
+}
+
+#add-tasks p {
+	margin-top: 7px;
+	width: 90%;
+}
+#add-tasks i {
+	margin: 10px 15px;
+	width: 10%;
+	float: left;
+}
+#add-tasks li:hover{
+	background-color: var(--left-content-hover);
+}
+
+
+.newlist-section {
+	height: 40px;
+	width: 100%;
+	float: left;
+}
+
+.newlist {
+	width: 85%;
+	height: 100%;
+	float: left;
+}
+
+.create {
+	width: 15%;
+	height: 100%;
+	float: right;
+	color: blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.plus-icon {
+	width: 20%;
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text-newlist {
+	width: 80%;
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text-newlist input {
+	border: none;
+	background: transparent;
+	height: 100%;
+	width: 100%;
+}
+
+.create:hover {
+	background-color: white;
+}
+
+.newlist:hover {
+	background-color: white;
+}
+
+.middle-navbar input[type=text] {
+	width: 35%;
+	height: 66%;
+	background-color: #a3c1f0;
+	border: none;
+	padding-left: 40px;
+	border-radius: 2px;
+	margin-top: 7px;
+	margin-left: 25%;
+	cursor: pointer;
+}
+
+.middle-navbar {
+	position: relative;
+}
+
+.middle-navbar i {
+	margin-left: 25%;
+	margin-top: 7px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 8px 8px;
+}
+
+.middle-navbar input:hover {
+	background-color: white;
+}
+
+.lines {
+	margin: 0 2%;
+	flex: 1;
+    background: linear-gradient(180deg, white 52px, grey);
+    background-size: 100% 53px;
+    box-shadow: inset 0 1px 0 0 #e5e5e5;
+    overflow: hidden;
+}
+
+#pop-up {
+	display: none;
+	z-index: 9999;
+	overflow: auto;
+	cursor: pointer;
+	height: 195px;
+	width: 200px;
+	position: absolute;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 silver;
+}
+
+.top {
+	height : 132px;
+	top: 0;
+	width: 100%;
+	float: left;
+	color: #4d4d4d;
+}
+
+.break {
+	height: 6px;
+	float: left;
+	width: 100%;
+}
+
+.break hr {
+	border-color: mintcream;
+	margin: 1px 0px;
+}
+
+.bottom {
+	height : 42px;
+	width: 100%;
+	float: left;
+	color: #ff5050;
+}
+
+.pop-list {
+	height: 100%;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	left: 0;
+}
+
+.pop-list li{
+	width: 100%;
+	height: 44px;
+	float: left;
+}
+
+.pop-list i {
+	width: 10%;
+	margin-top: 12px;
+	margin-left: 10px;
+	float: left;
+}
+
+.pop-list p {
+	width: 70%;
+	float: left;
+	margin-left: 5px;
+	margin-top: 9px;
+}
+
+.pop-list li:hover{
+	background-color: var(--left-content);
+}
+
+#confirmDelete {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	height: 150px;
+	width: 280px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 silver;
+	text-align: center;
+	margin : 220px 500px;
+}
+
+.text-portion {
+	height: 60%;
+	width: 100%;
+}
+
+#custom-text {
+	font-weight: bold;
+}
+
+.confirm-buttons {
+	height: 40%;
+	width: 100%;
+}
+
+.cancel {
+	width : 75px;
+	height: 30px;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: none;
+	border-radius: 3px;
+}
+
+.cancel:hover{
+	border : 1px solid black;
+}
+
+.delete-list {
+	width: 85px;
+	height: 30px;
+	float : right;
+	background-color: #ff471a;
+	color : white;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 3px;
+	border: none;
+}
+
+.delete-list:hover {
+	background-color: #cc2900;
+}
+
+#pop-up-for-task {
+	display: none;
+	z-index: 9999;
+	overflow: auto;
+	cursor: pointer;
+	color: #4d4d4d;
+	height: 105px;
+	width: 200px;
+	border-radius: 3px;
+	position: absolute;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 silver;
+}
+
+.blur {
+	opacity: 0.5;
+    position: absolute;
+}
+
+#tasks-right-new {
+	display: none;
+	flex: 1;
+	z-index: 9999;
+	height: 104px;
+	width: 100%;
+	float: left;
+	background-color: white;
+	
+}
+
+#first {
+	flex: 1;
+	height: 58px;
+	width: 100%;
+
+}
+
+#displayDate {
+	height: 5px;
+	width: 100%;
+	float: left;
+	flex: 1;
+	font-size: 10px;
+	position: fixed;
+}
+
+#dayAndDate {
+	margin-top: -14px;
+}
+
+#next {
+	width: 100%;
+	flex: 1;
+	height: 46px;
+}
+
+.first-left {
+	width: 70%;
+	height: 100%;
+	float : left;
+}
+
+.first-right {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.share-right {
+	margin-top: 5px;
+	margin-left : 5px;
+	height: 30px;
+	width: 80px;
+	float: right;
+	right: 10px;
+}
+
+.sort {
+	margin-top: 5px;
+	height :30px;
+	width: 80px;
+	margin-left: 5px;
+	float: right;
+}
+
+.right-item:hover {
+	background-color: lightgrey;
+	cursor: pointer;
+}
+
+.right-item i{
+	width: 10%;
+	margin: 7px 12px;
+	float: left;
+}
+
+.right-item p {
+	width: 90%;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+#task-name {
+	font-size: 23px;
+	margin-top: 10px;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	padding-right: 20px;
+	font-weight: 500;
+}
+
+#taskname:focus {
+	border: 1px;
+}
+
+#next ul{
+	background-color: pink;
+	padding: 0;
+	left: 0;
+}
+
+
+
+.task-content {
+	max-width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.dot-icon {
+	width: 30px;
+	height: 25px;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15px;
+}
+
+.dot-icon:hover {
+	background-color: var(--left-content);
+}
+
+#edit {
+	display: none;
+	padding : 4px 30px 4px 4px;
+	margin-top: 12px;
+	height : 28px;
+	width: 150px;
+	max-width: 300px;
+	font-weight: bold;
+	font-size: 22px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#listOptions {
+	display : none;
+	z-index: 9999;
+	cursor: pointer;
+	height: 225px;
+	width: 200px;
+	position: absolute;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 silver;
+}
+
+.listHeader {
+	height : 38px;
+	width : 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#options {
+	height : 129px;
+	width: 100%;
+}
+
+.deleteOption {
+	height: 41px;
+	width : 100%;
+}
+
+#listOptions hr {
+	border-color: mintcream;
+	margin : 2px 0px;
+}
+
+.delete {
+	color : red;
+}
+
+.next-plus-icon {
+	width: 4%;
+	height: 30px;
+	float: left;
+
+}
+
+.next-input {
+	width: 90%;
+	height: 100%;
+	float : left;
+}
+
+#iconPlus {
+	margin-top: 12px;
+}
+#addButton {
+	display: none;
+	width : 6%;
+	height: 100%;
+	float: right;
+	margin-top: -5px;
+	color: blue;
+	
+}
+
+#addButton button {
+	border : none;
+	color : blue;
+	height: 10px;
+	cursor: pointer;
+	background-color: white;
+}
+
+.next-plus-icon i{
+	width: 100%;
+	height: 100%;
+	margin-top: 8px;
+	margin-left: 8px;
+	left: 0;
+	cursor: pointer;
+	float : left;
+}
+
+.next-input input[type=text] {
+	width: 100%;
+	height : 100%;
+	top: 0;
+	padding-left: 5px;
+	float: right;
+	border: none;
+	margin-top: -3px;
+	background: transparent;
+}
+
+#blueLine {
+	height: 1px;
+	width: 100%;
+	float: left;
+	margin-top: 2px;
+	background-color : blue;
+}
+
+#extra-tasks {
+	max-height: 500px;
+	margin-top: -1px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	float: left;
+	color: #4d4d4d;
+}
+
+#taskLists {
+	flex: 1;
+	margin: 0px;
+    background: linear-gradient(180deg, white 52px, grey);
+    background-size: 100% 53px;
+    box-shadow: inset 0 1px 0 0 #e5e5e5;
+    overflow: hidden;
+}
+
+#extra-tasks ul {
+	list-style-type: none;
+	padding: 0;
+	left: 0;
+}
+
+#taskLists li {
+	height: 53px;
+	width : 100%;
+	float: left;
+	left: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+
+.iconfirst {
+	width : 4%;
+	height : 100%;
+	float : left;
+	color : var(--navbar-color);
+	margin-left : 10px;
+	margin-top: 16px;
+}
+
+#taskLists p {
+	max-width: 92%;
+	word-wrap: break-word;
+	height: 100%;
+	float: left;
+	margin-top: 12px;
+}
+
+.iconlast {
+	width : 4%;
+	height : 100%;
+	float : right;
+	margin-top: 15px;
+	margin-right: -10px;
+}
+
+#taskLists li:hover {
+	background-color: var(--left-content);
+}
+
+.fa-angle-right {
+	width: 10%;
+	float: left;
+	margin-right: -20px;
+	display: inline-block;
+}
+
+.theme-options {
+	height : 85px;
+	width: 310px;
+	margin-top: -45px;
+	display: none;
+	background-color: whitesmoke;
+}
+
+.theme-items:hover .theme-options{
+	display : block;
+	position: absolute;
+	margin-left: 200px;
+	margin-top: -5px;
+}
+
+.divide {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+.circle {
+	height: 35px;
+	width : 35px;
+	display: inline-block;
+	border-radius: 50%;
+
+}
+
+#blue {
+	background-color: #0099ff;
+}
+
+
+.blue-outline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+}
+
+.blue-outline:hover {
+	border-color: #0099ff;
+}
+
+#red {
+	background-color: #ff6666;
+}
+
+.red-outline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+}
+
+.red-outline: hover {
+	border-color:#ff6666;
+}
+
+#purple {
+	background-color: #ac00e6;
+}
+
+.purple-outline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+}
+
+.purple-outline:hover {
+	border-color: #ac00e6;
+}
+
+#green {
+	background-color: #00e64d ;
+}
+
+.green-outline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+}
+
+.green-outline:hover {
+	border-color: #00e64d;
+}
+
+#skyblue {
+	background-color: #33ccff;
+}
+
+.skyblue-outline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 1px solid transparent;
+}
+
+.skyblue-outline:hover {
+	border-color: #33ccff;
+}
+
+#extraTasksPopUp {
+	display: none;
+	height : 440px;
+	width: 240px;
+	flex: 1;
+	z-index: 9999;
+	position: absolute;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 silver;
+	color: #4d4d4d;
+}
+
+#extraTasksPopUp ul {
+	list-style-type: none;
+	margin-top: 0px;
+	left: 0;
+	padding: 0;
+	top: 0;
+}
+
+.extraPop li {
+	top: 0;
+	width: 100%;
+	height: 45px;
+}
+.pop-up-icon {
+	width: 10%;
+	height: 45px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.pop-up-icon-name {
+	width: 85%;
+	font-size: 14px;
+	float : right;
+	margin-top: 10px;
+	height: 45px;
+}
+
+.extraPop li:hover {
+	background-color: var(--left-content);
+	cursor: pointer;
+}
+
+#CompletedTasksContainer {
+	flex: 1;
+	margin: 0px;
+    background: linear-gradient(180deg, white 52px, grey);
+    background-size: 100% 53px;
+    box-shadow: inset 0 1px 0 0 #e5e5e5;
+    overflow: hidden;
+}
+
+
+#CompletedHeader {
+	display: none;
+	flex: 1;
+	margin: 0px;
+	height: 53px;
+	width: 100%;
+	cursor: pointer;
+}
+
+
+.headerIcon{
+	height : 100%;
+	width: 4%;
+	float: left;
+}
+
+#icon-angle {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+#text-completed {
+	margin-top: 12px;
+}
+
+.headerText {
+	height : 100%;
+	width: 96%;
+	float: right;
+}
+
+#CompletedTasks {
+	flex: 1;
+	clear : both;
+	display: block;
+	margin: 0px;
+    background: linear-gradient(180deg, white 52px, grey);
+    background-size: 100% 53px;
+    box-shadow: inset 0 1px 0 0 #e5e5e5;
+    overflow: hidden;
+}
+
+
+#CompletedTasks li {
+	height: 53px;
+	width : 100%;
+	float: left;
+	left: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+#CompletedTasks p {
+	max-width: 92%;
+	text-decoration: line-through;
+	word-wrap: break-word;
+	height: 100%;
+	float: left;
+	margin-top: 12px;
+}
+
+#CompletedTasks li:hover {
+	background-color: var(--left-content);
+}
+
+#CompletedTasks li:active {
+	background-color: var(--left-content);
+}
